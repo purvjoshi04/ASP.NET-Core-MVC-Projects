@@ -1,0 +1,14 @@
+﻿@model Practical_7.Models.Employee
+
+@if (Model != null)
+{
+    <h1>Employee Information</h1>
+    <p>Name: @Model.Name</p>
+    <p>Monthly Salary: @Model.Salary</p>
+    <p class="annual_sal">Extension method to show annual salary of the employee:</p>
+    <p>Annual Salary: @ViewBag.AnnualSalary</p>
+}
+else
+{
+    <p>No employee information available.</p>
+}

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Practical_5.Models.BirdInfo>
+
+    @{
+        ViewData["TItle"] = "Bird Infromation";
+    }
+
+    <div class="container">
+<h1 class="text-center">Bird Information</h1>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Species</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var BirdInfo in Model){
+<tr>
+    <td>@BirdInfo.BirdNumber</td>
+    <td>@BirdInfo.BirdName</td>
+    <td>@BirdInfo.BirdSpecies</td>
+    <td>@BirdInfo.BirdDesc</td>
+</tr>
+        }
+    </tbody>
+</table>
+    </div>
