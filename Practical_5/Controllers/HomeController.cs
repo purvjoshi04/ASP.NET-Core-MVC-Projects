@@ -6,18 +6,18 @@ using System.Collections.Generic;
 
 
 
-    public class HomeController : Controller
+public class HomeController : Controller
+{
+    private readonly ILogger<HomeController> _logger;
+
+    public HomeController(ILogger<HomeController> logger)
     {
-        private readonly ILogger<HomeController> _logger;
+        _logger = logger;
+    }
 
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
-        public IActionResult Index()
-        {
-            var birds = new List<BirdInfo>
+    public IActionResult Index()
+    {
+        var birds = new List<BirdInfo>
         {
             new BirdInfo { BirdNumber = 1, BirdName = "Bald Eagle", BirdSpecies = "Haliaeetus leucocephalus", BirdDesc = "The bald eagle is a majestic bird of prey with a distinctive white head and tail. It is the national bird and symbol of the United States." },
             new BirdInfo { BirdNumber = 2, BirdName = "American Robin", BirdSpecies = "Turdus migratorius", BirdDesc = "The American robin is a familiar songbird with a red-orange breast and a cheerful, melodious song. It is a common sight in North America." },
@@ -32,13 +32,13 @@ using System.Collections.Generic;
         };
 
 
-            return View(birds);
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-       
+        return View(birds);
     }
+
+    public IActionResult Privacy()
+    {
+        return View();
+    }
+
+
+}
